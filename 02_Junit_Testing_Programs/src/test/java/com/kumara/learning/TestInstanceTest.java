@@ -4,15 +4,14 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestBeforeAllAfterAll {
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) //This makes to instatiate the object once per class rather than for each Method
+class TestInstanceTest {
     ReverseString reverse;
-    public TestBeforeAllAfterAll(){
-        System.out.println("Object created");
-    } //For running each method annotates with Test the new object will instantiated
 
 
     @BeforeAll
-    static void start(){
+    void start(){
         System.out.println("Before all tests");
     }
     @BeforeEach
@@ -46,7 +45,7 @@ public class TestBeforeAllAfterAll {
     }
     @AfterAll
 
-    static void end(){
+  void end(){
         System.out.println("Cleaninf up after all tests");
     }
 
