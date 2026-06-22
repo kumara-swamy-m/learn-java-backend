@@ -2,21 +2,24 @@ package com.kumara;
 
 public class Dev {
 
-    private Laptop laptop;
+    private Computer  comp;
     private int age;
+
+    public Computer getComp() {
+        return comp;
+    }
+
+    public void setComp(Computer comp) {
+        this.comp = comp;
+    }
 
     public Dev(){
         System.out.println("Dev Constructor");
     }
 
-    public Dev(Laptop laptop) {
-        System.out.println("Dev  para  Constructor");
-        this.laptop = laptop;
-    }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
-    }
+
+
 
     public int getAge() {
         return age;
@@ -31,7 +34,7 @@ public class Dev {
 
     public  void build(){
         System.out.println("Building");
-        laptop.compile();
+        comp.compile();
 
 
     }

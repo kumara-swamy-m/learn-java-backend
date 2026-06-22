@@ -6,9 +6,10 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="dev" class="com.kumara.Dev">
+<bean id="dev" class="com.kumara.Dev" autowire="byType">
+<!--    <property name="comp" ref="comp"/>-->
 
-<constructor-arg ref="lap1"/>
+<!--<constructor-arg ref="lap1"/>-->
 <!--    <property name="laptop" ref="lap1"/> Wiring the object of lap with dev using property and setter-->
 
 
@@ -17,10 +18,9 @@
 
 
 </bean>
-
-
-
-    <bean id="lap1" class="com.kumara.Laptop">
+    <bean id="comp" class="com.kumara.Laptop" primary="true">
+    </bean>
+    <bean id="desk1" class="com.kumara.Desktop">
     </bean>
 
 </beans>
