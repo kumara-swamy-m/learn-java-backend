@@ -1,0 +1,31 @@
+package com.kumara.__Spring_web_app.controller;
+
+import com.kumara.__Spring_web_app.model.Product;
+import com.kumara.__Spring_web_app.service.ProductService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+
+@RestController
+public class ProductController {
+
+    ProductService service;
+
+  public  ProductController(ProductService service){
+      this.service =service;
+  }
+ @GetMapping("/products")
+  public List<Product> getProducts(){
+      return service.getProducts();
+  }
+    @GetMapping("/products/{prodId}")
+    public Product getProductById(@PathVariable int prodId){
+        return service.getProductById(prodId);
+    }
+   @PostMapping("/products")
+    public void addProduct(@RequestBody Product prod){
+       service.addProduct(prod);
+    }
+
+}
