@@ -22,6 +22,7 @@ public class Application {
 		alienRepo.save(alien1);
 		System.out.println(alienRepo.findAll());
 
+
 	}
 
 }
